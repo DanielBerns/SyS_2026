@@ -161,7 +161,7 @@ plot(w1,abs([S1(1:ns/2)' SF1(1:ns/2)']));
 	%^ vector de frecuencias para graficar el espectro
 	
 	% Observe que los picos de 5 y 30 Hz han sido eliminados
-	plot(w,abs[S(1:256)' SF(1:256)']));
+	plot(w,abs([S(1:256)' SF(1:256)']));
 	xlabel('Frecuencia (Hz)');
 	ylabel('Magnitud de la transformada de Fourier'); 
 \end{verbatim}
@@ -349,112 +349,7 @@ DTFS & $x\left[ n\right] =\sum_{m=0}^{N-1}\bar{\chi}\left[ m\right] e^{j2\pi
 \left[ n\right] e^{-j2\pi \frac{mn}{N}}$%
 \end{tabular}
 
-\end{document}
 
-\section{Propiedades comunes de los sistemas de los ejemplos}
-
-Los sistemas definidos por las ecs. (\ref{sisUno}), (\ref{sisDos}), (\ref
-{sisTres}), y (\ref{sisCuatro}) tienen las siguientes propiedades en
-com\'{u}n:
-
-\begin{enumerate}
-\item  Lineales, porque las ecs. s\'{o}lo contienen operadores lineales.
-
-\item  Con memoria, por las integrales, las derivadas y sumatorias.
-
-\item  Causales, porque en las ecuaciones no aparecen valores futuros de la
-entrada, s\'{o}lo valores actuales o pasados.
-\end{enumerate}
-
-\section{Transformadas Laplace unilaterales}
-
-\subsection{Funciones trigonom\'{e}tricas, primera parte}
-
-\begin{center}
-\begin{tabular}{ll}
-$f\left( t\right)$ & $F\left( s\right) =L\left\{f(t)\right\}$ \\ 
-$\sin \left( \omega t\right) $ & $\frac{\omega }{s^{2}+\omega ^{2}}$
-\\ 
-$\cos \left( \omega t\right) $ & $\frac{s}{s^{2}+\omega ^{2}}$ \\ 
-$\sin ^{2}\left( \omega t\right) $ & $\frac{2\omega ^{2}}{s\left(
-s^{2}+4\omega ^{2}\right) }$ \\ 
-$\cos ^{2}\left( \omega t\right) $ & $\frac{s^{2}+2\omega ^{2}}{s\left(
-s^{2}+4\omega ^{2}\right) }$ \\ 
-$t\sin \left( \omega t\right) $ & $\frac{2\omega s}{\left( s^{2}+\omega
-^{2}\right) ^{2}}$ \\ 
-$t\cos \left( \omega t\right) $ & $\frac{s^{2}-\omega ^{2}}{\left(
-s^{2}+\omega ^{2}\right) ^{2}}$ \\ 
-$\frac{2\left( 1-\cos \left( \omega t\right) \right) }{t} $ & $\ln 
-\frac{s^{2}+\omega ^{2}}{s^{2}}$ \\ 
-$\frac{\sin \left( \omega t\right) }{t}$ & $\arctan \left( \frac{\omega }{s%
-}\right) $
-\end{tabular}
-\end{center}
-  
-\subsection{Funciones trigonom\'{e}tricas, segunda parte} 
-
-\begin{center}
-\begin{tabular}{ll}
-$f\left( t\right)$ & $F\left( s\right) =L\left\{f(t)\right\}$ \\ 
-$\sin \left( \omega t\right) +\omega t\cos \left( \omega t\right) $ & $%
-\frac{2\omega s^{2}}{\left( s^{2}+\omega ^{2}\right) ^{2}}$ \\ 
-$\sin \left( \omega t\right) -\omega t\cos \left( \omega t\right) $ & $%
-\frac{2\omega ^{3}}{\left( s^{2}-\omega ^{2}\right) ^{2}}$ \\ 
-$1-\cos \left( \omega t\right) $ & $\frac{\omega ^{2}}{s\left( s^{2}+\omega
-^{2}\right) }$ \\ 
-$\left( \omega t\right) -\sin \left( \omega t\right) $ & $\frac{\omega ^{3}%
-}{s^{2}\left( s^{2}+\omega ^{2}\right) }$ \\ 
-$\frac{a\sin \left( bt\right) -b\sin \left( at\right) }{ab\left(
-a^{2}-b^{2}\right) } $ & $\frac{1}{\left( s^{2}+a^{2}\right) \left(
-s^{2}+b^{2}\right) }$ \\ 
-$\frac{\cos \left( bt\right) -\cos \left( at\right) }{a^{2}-b^{2}}$ & $%
-\frac{s}{\left( s^{2}+a^{2}\right) \left( s^{2}+b^{2}\right) }$ \\ 
-$\frac{\sin \left( at\right) \cos \left( bt\right) }{t}$ & $\frac{1}{2}%
-\arctan \left( \frac{a+b}{s}\right) +\frac{1}{2}\arctan \left( \frac{a-b}{%
-s}\right) $ \\ 
-\end{tabular}
-
-\end{center}
-
-\subsection{Funciones hiperb\'{o}licas, primera parte}
-
-\begin{center}
-\begin{tabular}{ll}
-$f\left( t\right)$ & $F\left( s\right) =L\left\{f(t)\right\}$ \\ 
-$\sinh kt$ & $\frac{k}{s^{2}-k^{2}} $ \\ 
-$\cosh kt$ & $\frac{s}{s^{2}-k^{2}} $ \\ 
-$\sinh ^{2}kt$ & $\frac{2k^{2}}{s\left( s^{2}-4k^{2}\right) } $ \\ 
-$\cosh ^{2}kt $ & $\frac{s^{2}-2k^{2}}{s\left( s^{2}-4k^{2}\right) }$%
-\end{tabular}
-\end{center}
-
-\subsection{Funciones hiperb\'{o}licas, primera parte}
-
-\begin{center}
-\begin{tabular}{ll}
-$f\left( t\right)$ & $F\left( s\right) =L\left\{f(t)\right\}$ \\ 
-$t\sinh kt$ & $\frac{2ks}{\left( s^{2}-k^{2}\right) ^{2}} $ \\ 
-$t\cosh kt$ & $\frac{s^{2}+k^{2}}{\left( s^{2}-k^{2}\right) ^{2}} $\\ 
-$\frac{2\left( 1-\cosh kt\right) }{t}$ & $\ln \frac{s^{2}-k^{2}}{s^{2}}$ \\ 
-\end{tabular}
-\end{center}
-
-\subsection{Funciones exponenciales}
-
-\begin{center}
-\begin{tabular}{ll}
-$f\left( t\right)$ & $F\left( s\right) =L\left\{f(t)\right\}$ \\ 
-$e^{at}$                        & $\frac{1}{s-a} $                                              \\ 
-$te^{at}$                       & $\frac{1}{\left( s-a\right) ^{2}} $                           \\ 
-$t^ne^{at}$                     & $\frac{n!}{\left( s-a\right) ^{n+1}} $, $n\geq 0,$            \\ 
-$\frac{e^{bt}-e^{at}}{t} $      & $\ln \frac{s-a}{s-b}$                                         \\
-$\frac{1}{\sqrt{\pi t}}e^{-a^{2}/4t}$ & $\frac{e^{-a\sqrt{s}}}{\sqrt{s}}$                       \\ 
-$\frac{2\sqrt{\pi t^{3}}}e^{-a^{2}/4t} $ & $e^{-a\sqrt{s}} $                                    \\ 
-$\frac{e^{at}-e^{bt}}{a-b}$ & $\frac{1}{\left( s-a\right) \left(s-b\right) } $                  \\ 
-$\frac{ae^{at}-be^{bt}}{a-b}$ & $\frac{s}{\left( s-a\right) \left(s-b\right) }$
-\end{tabular}
-
-\end{center}
 
 
 \section{Libros}
